@@ -12,6 +12,8 @@ import com.example.ExpanseTracker.service.utility.hashingUtility.PasswordEncrypt
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class UserService {
 
@@ -115,5 +117,9 @@ public class UserService {
 
         return productService.getExpenditureByMonth(user,year,month);
 
+    }
+
+    public List<User> getAllUsers() {
+        return userRepo.findAll();
     }
 }

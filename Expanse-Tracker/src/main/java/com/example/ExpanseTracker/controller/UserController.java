@@ -11,6 +11,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @Validated
 public class UserController {
@@ -42,6 +44,12 @@ public class UserController {
         else {
             return "not a authenticate user activity";
         }
+    }
+
+    //get all users
+    @GetMapping("users")
+    public List<User> getAllUsers(){
+        return userService.getAllUsers();
     }
 
 }
